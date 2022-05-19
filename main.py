@@ -14,17 +14,20 @@ class Post(BaseModel):
 def get_all_post():
     return {"message": "Hello World"}
 
+@app.get("/post/{id}")
+def get_post_by_id(id: int):
+    pass
 
-@app.post('/post')
+@app.post("/posts")
 def create_post(post: Post):
-    return f'{post.title}  {post.content}'
+    return {"data": post}
 
 
-@app.put('/post/{id}')
+@app.put("/post/{id}")
 def update_a_post(id: int):
     pass
 
 
-@app.delete('/post/{id}')
+@app.delete("/post/{id}")
 def update_a_post(id: int):
     pass
